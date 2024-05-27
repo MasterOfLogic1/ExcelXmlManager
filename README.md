@@ -16,4 +16,18 @@ The ExcelXmlPacket Utility is a collection of functions designed to interact wit
 
 5.) Error Handling: Proper error handling is implemented to ensure smooth execution and error reporting.
 
+
+# Purpose: 
+This code can be wrapped as an object or library in any RPA technology, hence providing us with methods to manage and interact with an Excel file as XML. This prevents the time wasted waiting for Excel to open up and performing traditional Excel VBO.
+The Global Code contains a VB.Net  class named ExcelXmlPacket is designed to process Excel files. It takes the path to an Excel file as input and extracts information from it. The class creates a copy of the Excel file with a .zip extension and extracts its contents. Then, it reads data from the extracted XML files like worksheets and shared strings. Finally, it stores the extracted data in a structured format for further processing.
+
+
 Overall, the ExcelXmlPacket Utility streamlines the process of working with Excel files in XML format, providing developers with essential functions for data extraction and manipulation.
+
+# Developer : David Oku
+Download code at : https://github.com/MasterOfLogic1/ExcelXmlManager
+
+
+
+
+
