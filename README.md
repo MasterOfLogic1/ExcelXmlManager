@@ -62,25 +62,105 @@ The `Reusables` class contains utility functions that are commonly used for vari
   - `InitializeTable(numberOfCols As Integer) As DataTable`: Initializes a DataTable with a specified number of columns, using default column names.
   - `InitializeTable(columnNames As String()) As DataTable`: Initializes a DataTable with specified column names.
 
-### 3. **ExcelWriter Class**
+### 3. **ExcelXmlAction Class**
 
-The `ExcelWriter` class provides a method to write a DataTable to an Excel file by generating XML content that conforms to the OpenXML spreadsheet format.
+provides a suite of static methods for various excel related operation i.e read cell value, last used range, last row, read excel to datatable e.t.c. This class is dependent on the `ExcelXmlPacket` class . Here's a detailed breakdown of the class and its methods
 
-#### Key Components:
+The third class, `ExcelXmlAction`, provides a suite of static methods to read and manipulate Excel data stored in XML format. This class is dependent on the `ExcelXmlPacket` class for extracting and managing the XML data. Here's a detailed breakdown of the class and its methods:
 
-- **Method:**
-  - `WriteTableToNewExcel(dt As DataTable, excelFilePath As String, sheetName As String)`: This method generates an XML document for the worksheet data from the given DataTable and saves it as an Excel file.
-    - It creates a worksheet XML structure with namespaces.
-    - It adds rows and cells to the worksheet based on the DataTable.
-    - It saves the XML document to a specified file path and renames it to have an `.xlsx` extension.
+### Overview
+
+The `ExcelXmlAction` class facilitates various operations on Excel files represented in XML format. It includes methods to read Excel data into a `DataTable`, fetch sheet names and indices, and determine the used range, last used row, and last used column in a sheet.
+
+### Class Definition
+
+```vb
+Imports System.Data
+Imports System.IO
+Imports System.Xml
+Imports ExcelXmlManager
+
+Public Class ExcelXmlAction
+```
+
+### Methods
+
+1. **ReadExcelToTable(excelFullFilePath As String, sheetName As String, hasHeader As Boolean) As DataTable**
+   - Reads the specified sheet from the Excel file into a `DataTable`.
+   - Parameters:
+     - `excelFullFilePath`: Full path to the Excel file.
+     - `sheetName`: Name of the sheet to read.
+     - `hasHeader`: Indicates if the first row contains headers.
+   - Processes shared strings and sheet data XML to populate the `DataTable`.
+
+2. **ReadExcelToTable(excelFullFilePath As String, sheetIndex As Integer, hasHeader As Boolean) As DataTable**
+   - An overload of the previous method, which reads the sheet based on its index.
+   - Parameters:
+     - `excelFullFilePath`: Full path to the Excel file.
+     - `sheetIndex`: Index of the sheet to read.
+     - `hasHeader`: Indicates if the first row contains headers.
+   - Similar processing of shared strings and sheet data XML.
+
+3. **GetSheetNameBySheetIndex(excelFullFilePath As String, sheetIndex As Integer) As String**
+   - Retrieves the name of the sheet at the specified index.
+   - Parameters:
+     - `excelFullFilePath`: Full path to the Excel file.
+     - `sheetIndex`: Index of the sheet.
+   - Returns the name of the sheet or throws an error if not found.
+
+4. **GetSheetIndexBySeetName(excelFullFilePath As String, sheetName As String) As Integer**
+   - Retrieves the index of the sheet with the specified name.
+   - Parameters:
+     - `excelFullFilePath`: Full path to the Excel file.
+     - `sheetName`: Name of the sheet.
+   - Returns the index of the sheet or throws an error if not found.
+
+5. **GetUsedRange(excelFullFilePath As String, sheetName As String) As String**
+   - Retrieves the used range of cells in the specified sheet.
+   - Parameters:
+     - `excelFullFilePath`: Full path to the Excel file.
+     - `sheetName`: Name of the sheet.
+   - Returns the used range in A1 notation.
+
+6. **GetLastUsedRow(excelFullFilePath As String, sheetName As String) As Integer**
+   - Retrieves the index of the last used row in the specified sheet.
+   - Parameters:
+     - `excelFullFilePath`: Full path to the Excel file.
+     - `sheetName`: Name of the sheet.
+   - Returns the last used row index or throws an error if an issue arises.
+
+7. **GetLastUsedColumn(excelFullFilePath As String, sheetName As String) As Integer**
+   - Retrieves the index of the last used column in the specified sheet.
+   - Parameters:
+     - `excelFullFilePath`: Full path to the Excel file.
+     - `sheetName`: Name of the sheet.
+   - Returns the last used column index or throws an error if an issue arises.
+
+8. **GetExcelSheetNames(excelFullFilePath As String) As DataTable**
+   - Retrieves the names of all sheets in the Excel file.
+   - Parameters:
+     - `excelFullFilePath`: Full path to the Excel file.
+   - Returns a `DataTable` containing the sheet names.
+
+9. **GetCellValue(excelFullFilePath As String, sheetName As String, cellAddress As String) As String**
+   - Retrieves the value of a specified cell.
+   - Parameters:
+     - `excelFullFilePath`: Full path to the Excel file.
+     - `sheetName`: Name of the sheet.
+     - `cellAddress`: Address of the cell in A1 notation.
+   - Returns the cell value as a string or throws an error if an issue arises.
+
+### Detailed Method Functionality
+
+Each method follows a similar pattern:
+1. **Instantiation**: Create an instance of `ExcelXmlPacket` to access the XML data.
+2. **Error Handling**: Check for the existence of the specified sheet or index and handle errors appropriately.
+3. **XML Processing**: Load and manipulate XML data to extract the required information.
+4. **Return Results**: Return the extracted data or throw a `SystemException` if an error occurs.
 
 ### Summary
 
-- The **ExcelXmlPacket** class focuses on reading and extracting data from an existing Excel file.
-- The **Reusables** class provides utility functions for common Excel-related operations.
-- The **ExcelWriter** class (added in the latest explanation) focuses on writing data back to a new Excel file by generating the necessary XML content. 
-
-These classes together provide a comprehensive set of functionalities for handling Excel files, from reading and manipulating data to writing it back into the correct format.
+The `ExcelXmlAction` class is a utility for reading and manipulating Excel data stored in XML format. It provides methods for accessing sheet names and indices, reading cell values, and determining the structure and content of Excel sheets. This class relies heavily on the `ExcelXmlPacket` class for parsing and handling the XML data.
 
 
 Overall, the ExcelXmlPacket Utility streamlines the process of working with Excel files in XML format, providing developers with essential functions for data extraction and manipulation.
