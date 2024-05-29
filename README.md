@@ -26,7 +26,7 @@ The program contains 3 Classes which are :
 
 ### 1. **ExcelXmlPacket Class**
 
-The `ExcelXmlPacket` class is designed to handle and manipulate Excel files in XML format. This class provides functionalities to extract data from Excel files, read various components like worksheets and shared strings, and format cells. it contains functions that implements setting up and converting the excel to xml. when initialized, the excel 
+The `ExcelXmlPacket` class is designed to setup the excel in XML format. it contains functions that implements setting up and converting the excel to xml. These functions simply implement the process of changing the extension of the given excel to .zip, unzipping the file and holding relevant data that would be used in other classes in vairables. 
 
 #### Key Components:
 
