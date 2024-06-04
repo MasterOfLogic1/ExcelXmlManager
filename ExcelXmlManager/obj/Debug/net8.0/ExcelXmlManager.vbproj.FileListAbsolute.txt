@@ -1,0 +1,14 @@
+C:\Users\7000036464\source\repos\ExcelXmlManager\ExcelXmlManager\bin\Debug\net8.0\ExcelXmlManager.exe
+C:\Users\7000036464\source\repos\ExcelXmlManager\ExcelXmlManager\bin\Debug\net8.0\ExcelXmlManager.deps.json
+C:\Users\7000036464\source\repos\ExcelXmlManager\ExcelXmlManager\bin\Debug\net8.0\ExcelXmlManager.runtimeconfig.json
+C:\Users\7000036464\source\repos\ExcelXmlManager\ExcelXmlManager\bin\Debug\net8.0\ExcelXmlManager.dll
+C:\Users\7000036464\source\repos\ExcelXmlManager\ExcelXmlManager\bin\Debug\net8.0\ExcelXmlManager.pdb
+C:\Users\7000036464\source\repos\ExcelXmlManager\ExcelXmlManager\obj\Debug\net8.0\ExcelXmlManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\7000036464\source\repos\ExcelXmlManager\ExcelXmlManager\obj\Debug\net8.0\ExcelXmlManager.AssemblyInfoInputs.cache
+C:\Users\7000036464\source\repos\ExcelXmlManager\ExcelXmlManager\obj\Debug\net8.0\ExcelXmlManager.AssemblyInfo.vb
+C:\Users\7000036464\source\repos\ExcelXmlManager\ExcelXmlManager\obj\Debug\net8.0\ExcelXmlManager.vbproj.CoreCompileInputs.cache
+C:\Users\7000036464\source\repos\ExcelXmlManager\ExcelXmlManager\obj\Debug\net8.0\ExcelXmlManager.dll
+C:\Users\7000036464\source\repos\ExcelXmlManager\ExcelXmlManager\obj\Debug\net8.0\refint\ExcelXmlManager.dll
+C:\Users\7000036464\source\repos\ExcelXmlManager\ExcelXmlManager\obj\Debug\net8.0\ExcelXmlManager.pdb
+C:\Users\7000036464\source\repos\ExcelXmlManager\ExcelXmlManager\obj\Debug\net8.0\ExcelXmlManager.genruntimeconfig.cache
+C:\Users\7000036464\source\repos\ExcelXmlManager\ExcelXmlManager\obj\Debug\net8.0\ref\ExcelXmlManager.dll
