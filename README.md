@@ -217,19 +217,13 @@ Appends a `DataTable` to an existing Excel sheet.
   excelAction.AppendDataTableToSheet("path/to/excel.xlsx", "Sheet1", dataTable)
   ```
 
-## Example Usage In Blue Prism
-
-Certainly! Here's the updated section for Blue Prism usage, including references to required DLLs and namespace imports:
-
----
-
-Certainly! Here's an improved version of the example usage in Blue Prism for the `ExcelXmlPowerPack` library:
-
 ---
 
 ## Example Usage In Blue Prism
 
 This library provides a comprehensive suite of methods designed for seamless interaction with Excel files programmatically, making it well-suited for automating Excel tasks within applications like Blue Prism for robotic process automation (RPA). It supports essential functionalities such as reading and writing cell values, managing sheets, and applying styles. The VBO ensures robust operation and provides clear diagnostics in case of failures.
+
+This section outlines how to integrate and utilize the `ExcelXmlPowerPack` VBO within Blue Prism, ensuring that you have the necessary dependencies and demonstrating typical use cases through implemented examples.
 
 ### External References Required:
 
@@ -292,9 +286,12 @@ End Try
   - Catches any exceptions thrown during the execution of the try block.
   - Assigns the error message (`ex.Message`) to the `errorMessage` variable for error handling or logging purposes.
 
-This example showcases how to utilize the `ExcelXmlAction` VBO in Blue Prism to effectively manage Excel data, ensuring reliability and clarity in automation workflows.
 
 ---
 
-This section outlines how to integrate and utilize the `ExcelXmlPowerPack` VBO within Blue Prism, ensuring that you have the necessary dependencies and demonstrating typical use cases through implemented examples.
+
+Developer: David Oku  
+Download source code at: [https://github.com/MasterOfLogic1/ExcelXmlManager](https://github.com/MasterOfLogic1/ExcelXmlManager)
+
+
 
