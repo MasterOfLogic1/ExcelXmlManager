@@ -255,13 +255,16 @@ To implement reading a sheet into a DataTable:
 1. **Create a page** named `ReadSheetToCollection` in the target Blue Prism Object.
 2. **Ensure the page** contains the imported DLLs mentioned as external references and the namespace imports.
 3. **In a code stage** on the `ReadSheetToCollection` page, implement the following:
-4. The code stage would have the following arguments:
-excelFullFilePath (Text, Input): The full file path to the Excel workbook.
-SheetName (Text, Input): The name of the sheet to read. If not provided, it retrieves the sheet name using sheetIndex.
-sheetIndex (Number, Input): The index of the sheet to read (0-based). Used if SheetName is not provided.
-Range (Text, Input): The range of cells to read (e.g., "A1"). If omitted, reads the entire sheet.
-hasHeader (Flag, Input): Flag indicating if the first row should be treated as header names in the DataTable.
-dt (Collection, Output): The DataTable containing the data read from the Excel sheet.
+   
+##### The code stage would have the following arguments:
+
+- `excelFullFilePath` (Text, Input): The full file path to the Excel workbook.
+- `SheetName` (Text, Input): The name of the sheet to read. If not provided, it retrieves the sheet name using `sheetIndex`.
+- `sheetIndex` (Number, Input): The index of the sheet to read (0-based). Used if `SheetName` is not provided.
+- `Range` (Text, Input): The range of cells to read (e.g., "A1:C10"). If omitted, reads the entire sheet.
+- `hasHeader` (Flag, Input): Flag indicating if the first row should be treated as header names in the DataTable.
+
+- `dt` (Collection, Output): The DataTable containing the data read from the Excel sheet.
 
 ```vb
 Try
