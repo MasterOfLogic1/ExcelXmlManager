@@ -223,9 +223,13 @@ Certainly! Here's the updated section for Blue Prism usage, including references
 
 ---
 
+Certainly! Here's an improved version of the example usage in Blue Prism for the `ExcelXmlPowerPack` library:
+
+---
+
 ## Example Usage In Blue Prism
 
-This library offers a comprehensive suite of methods for interacting with Excel files programmatically, making it ideal for automating Excel tasks in applications like Blue Prism for robotic process automation (RPA). It supports functionalities such as reading and writing cell values, managing sheets, and applying styles. The VBO ensures robust operation and provides clear diagnostics in case of failures.
+This library provides a comprehensive suite of methods designed for seamless interaction with Excel files programmatically, making it well-suited for automating Excel tasks within applications like Blue Prism for robotic process automation (RPA). It supports essential functionalities such as reading and writing cell values, managing sheets, and applying styles. The VBO ensures robust operation and provides clear diagnostics in case of failures.
 
 ### External References Required:
 
@@ -236,49 +240,49 @@ This library offers a comprehensive suite of methods for interacting with Excel 
 
 ### Namespace Imports:
 
-- `ExcelXmlPowerPack.ExcelXmlMain`
+1. **ExcelXmlPowerPack.ExcelXmlMain**
 
-### Examples Implemented in Blue Prism:
+### Example Implemented in Blue Prism:
+
+This example demonstrates how to handle Excel operations using the `ExcelXmlAction` VBO within Blue Prism, ensuring robust error handling and data retrieval from Excel files.
 
 To use these functionalities in Blue Prism, import the necessary DLLs into your VBO and implement each example usage in a code stage on a designated page.
 
-1. **Reading Cell Value:**
+#### Example: Reading a Sheet into a DataTable
 
-   ```vb
-   Dim excelAction As New ExcelXmlAction("path_to_excel_file.xlsx")
-   Dim cellValue As String = excelAction.ReadCellValue("Sheet1", "A1")
-   ```
+To implement reading a sheet into a DataTable:
 
-2. **Getting All Sheet Names:**
+1. **Create a page** named `ReadSheetToCollection` in the target Blue Prism Object.
+2. **Ensure the page** contains the imported DLLs mentioned as external references and the namespace imports.
+3. **In a code stage** on the `ReadSheetToCollection` page, implement the following:
 
-   ```vb
-   Dim excelAction As New ExcelXmlAction("path_to_excel_file.xlsx")
-   Dim sheetNames As String() = excelAction.GetAllSheetNames()
-   ```
+```vb
+Try
+    Dim exl As New ExcelXmlAction(excelFullFilePath)
+    If String.IsNullOrEmpty(SheetName) Then
+        ' If sheetname was not provided, retrieve sheetname from the index
+        SheetName = exl.GetSheetByIndex(sheetIndex)
+    End If
+    
+    ' Read sheet to DataTable
+    dt = exl.ReadSheetToDataTable(SheetName, Range, hasHeader)
+    
+Catch ex As Exception
+    errorMessage = ex.Message
+End Try
+```
 
-3. **Adding a New Sheet:**
+### Explanation:
+- **Try Block:**
+  - Creates a new instance `exl` of `ExcelXmlAction` with the provided `excelFullFilePath`.
+  - Checks if `SheetName` is provided. If not, it retrieves the sheet name using `exl.GetSheetByIndex(sheetIndex)`.
+  - Calls `exl.ReadSheetToDataTable(SheetName, Range, hasHeader)` to read the Excel sheet into a DataTable `dt`.
+  
+- **Catch Block:**
+  - Catches any exceptions thrown during the execution of the try block.
+  - Assigns the error message (`ex.Message`) to the `errorMessage` variable for error handling or logging purposes.
 
-   ```vb
-   Dim excelAction As New ExcelXmlAction("path_to_excel_file.xlsx")
-   excelAction.AddSheet("NewSheet")
-   ```
-
-4. **Writing DataTable to Sheet:**
-
-   ```vb
-   Dim dataTable As System.Data.DataTable = New System.Data.DataTable()
-   ' Populate the DataTable with data
-
-   Dim excelAction As New ExcelXmlAction("path_to_excel_file.xlsx")
-   excelAction.WriteDataTableToSheet("path_to_excel_file.xlsx", "Sheet1", dataTable, "A1", True)
-   ```
-
-5. **Deleting a Range of Cells:**
-
-   ```vb
-   Dim excelAction As New ExcelXmlAction("path_to_excel_file.xlsx")
-   excelAction.DeleteRange("Sheet1", "A1:C5")
-   ```
+This example showcases how to utilize the `ExcelXmlAction` VBO in Blue Prism to effectively manage Excel data, ensuring reliability and clarity in automation workflows.
 
 ---
 
