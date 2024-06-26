@@ -22,73 +22,73 @@ Returns the value of a specified cell in the given sheet.
   - `sheetName`: The name of the sheet.
   - `cellReference`: The cell reference (e.g., "A1").
 
-#### `GetAllSheetNames() As String[]`
+#### 2.)`GetAllSheetNames() As String[]`
 Returns an array of all sheet names in the Excel file.
 
 - **Parameters:** None
 
-#### `GetSheetByIndex(index As Integer) As String`
+#### 3.)`GetSheetByIndex(index As Integer) As String`
 Returns the name of the sheet at the specified index.
 
 - **Parameters:**
   - `index`: The index of the sheet (0-based).
 
-#### `GetSheetIndexByName(sheetName As String) As Integer?`
+#### 4.)`GetSheetIndexByName(sheetName As String) As Integer?`
 Returns the index of the sheet with the specified name.
 
 - **Parameters:**
   - `sheetName`: The name of the sheet.
 
-#### `GetLastUsedRow(sheetName As String) As Integer`
+#### 5.)`GetLastUsedRow(sheetName As String) As Integer`
 Returns the index of the last used row in the specified sheet.
 
 - **Parameters:**
   - `sheetName`: The name of the sheet.
 
-#### `GetLastUsedColumn(sheetName As String) As Object[]`
+#### 6.)`GetLastUsedColumn(sheetName As String) As Object[]`
 Returns the letter and index of the last used column in the specified sheet.
 
 - **Parameters:**
   - `sheetName`: The name of the sheet.
 
-#### `GetUsedRange(sheetName As String) As Object[]`
+#### 7.)`GetUsedRange(sheetName As String) As Object[]`
 Returns the used range of the specified sheet as an array of two cell references.
 
 - **Parameters:**
   - `sheetName`: The name of the sheet.
 
-#### `DeleteSheet(sheetName As String)`
+#### 8.)`DeleteSheet(sheetName As String)`
 Deletes the specified sheet from the Excel file.
 
 - **Parameters:**
   - `sheetName`: The name of the sheet.
 
-#### `AddSheet(sheetName As String)`
+#### 9.)`AddSheet(sheetName As String)`
 Adds a new sheet with the specified name to the Excel file.
 
 - **Parameters:**
   - `sheetName`: The name of the new sheet.
 
-#### `RenameSheet(oldSheetName As String, newSheetName As String)`
+#### 10.)`RenameSheet(oldSheetName As String, newSheetName As String)`
 Renames an existing sheet to a new name.
 
 - **Parameters:**
   - `oldSheetName`: The current name of the sheet.
   - `newSheetName`: The new name for the sheet.
 
-#### `HideSheet(sheetName As String)`
+#### 11.)`HideSheet(sheetName As String)`
 Hides the specified sheet.
 
 - **Parameters:**
   - `sheetName`: The name of the sheet to hide.
 
-#### `UnhideSheet(sheetName As String)`
+#### 12.)`UnhideSheet(sheetName As String)`
 Unhides the specified sheet.
 
 - **Parameters:**
   - `sheetName`: The name of the sheet to unhide.
 
-#### `AddColorToRange(sheetName As String, colorHex As String, Optional cellRange As String = Nothing)`
+#### 14.)`AddColorToRange(sheetName As String, colorHex As String, Optional cellRange As String = Nothing)`
 Adds color to a specified range of cells in the sheet. If no range is specified, it colors the entire used range.
 
 - **Parameters:**
@@ -96,14 +96,14 @@ Adds color to a specified range of cells in the sheet. If no range is specified,
   - `colorHex`: The color in hex format (e.g., "FF0000" for red).
   - `cellRange` (Optional): The cell range to color (e.g., "A1:C5"). If omitted, the entire used range is colored.
 
-#### `DeleteRange(sheetName As String, Optional cellRange As String = Nothing)`
+#### 15.)`DeleteRange(sheetName As String, Optional cellRange As String = Nothing)`
 Deletes a specified range of cells in the sheet. If no range is specified, it deletes the entire used range.
 
 - **Parameters:**
   - `sheetName`: The name of the sheet.
   - `cellRange` (Optional): The cell range to delete (e.g., "A1:C5"). If omitted, the entire used range is deleted.
 
-## Usage
+## Example Usage In Vscode or .Net App
 To use the `ExcelXmlAction` class, create an instance by passing the path to your Excel file, and then call the desired methods on the instance.
 
 ```vb
