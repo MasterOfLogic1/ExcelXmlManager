@@ -13,9 +13,9 @@ Initializes a new instance of the `ExcelXmlAction` class with the specified file
 - **Parameters:**
   - `filePath`: A string representing the path to the Excel file.
 
-### Public Methods
+# Public Methods
 
-#### `ReadCellValue(sheetName As String, cellReference As String) As String`
+#### 1.) `ReadCellValue(sheetName As String, cellReference As String) As String`
 Returns the value of a specified cell in the given sheet.
 
 - **Parameters:**
