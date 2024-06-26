@@ -103,6 +103,56 @@ Deletes a specified range of cells in the sheet. If no range is specified, it de
   - `sheetName`: The name of the sheet.
   - `cellRange` (Optional): The cell range to delete (e.g., "A1:C5"). If omitted, the entire used range is deleted.
 
+Certainly! Here is the README updated to include the methods in the specified format:
+
+
+#### 16.) `ReadSheetToDataTable(sheetName As String, Optional cellRange As String = Nothing, Optional hasHeader As Boolean = False)`
+Reads an Excel sheet into a `DataTable`.
+
+- **Parameters:**
+  - `sheetName`: The name of the sheet to read.
+  - `cellRange` (Optional): The range of cells to read (e.g., "A1:C10"). Defaults to the entire sheet if not specified.
+  - `hasHeader` (Optional): Indicates if the first row should be treated as a header. Defaults to `False`.
+
+- **Returns:**
+  - `System.Data.DataTable`: A DataTable containing the sheet data.
+
+- **Example:**
+  ```vb
+  Dim dataTable As System.Data.DataTable = ExcelXmlHelperActions.ReadSheetToDataTable("Sheet1", "A1:C10", True)
+  ```
+
+#### 17.) `WriteDataTableToSheet(filePath As String, sheetName As String, dataTable As System.Data.DataTable, Optional startCell As String = "A1", Optional AddHeader As Boolean = True)`
+Writes a `DataTable` to an Excel sheet, starting from a specified cell.
+
+- **Parameters:**
+  - `filePath`: The file path of the Excel document.
+  - `sheetName`: The name of the sheet to write to.
+  - `dataTable`: The DataTable to write.
+  - `startCell` (Optional): The cell reference to start writing from (e.g., "A1"). Defaults to "A1".
+  - `AddHeader` (Optional): Indicates if column headers should be written. Defaults to `True`.
+
+- **Example:**
+  ```vb
+  ExcelXmlHelperActions.WriteDataTableToSheet("path/to/excel.xlsx", "Sheet1", dataTable, "A1", True)
+  ```
+
+#### 18.) `AppendDataTableToSheet(filePath As String, sheetName As String, dataTable As System.Data.DataTable)`
+Appends a `DataTable` to an existing Excel sheet.
+
+- **Parameters:**
+  - `filePath`: The file path of the Excel document.
+  - `sheetName`: The name of the sheet to append to.
+  - `dataTable`: The DataTable to append.
+
+- **Example:**
+  ```vb
+  ExcelXmlHelperActions.AppendDataTableToSheet("path/to/excel.xlsx", "Sheet1", dataTable)
+  ```
+-----------------
+
+## Example Usage In Blue Prism
+
 ## Example Usage In Vscode or .Net App
 To use the `ExcelXmlAction` class, create an instance by passing the path to your Excel file, and then call the desired methods on the instance.
 
