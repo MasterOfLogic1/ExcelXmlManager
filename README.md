@@ -244,7 +244,7 @@ This library provides a comprehensive suite of methods designed for seamless int
 
 ### Example Implemented in Blue Prism:
 
-This example demonstrates how to handle Excel operations using the `ExcelXmlAction` VBO within Blue Prism, ensuring robust error handling and data retrieval from Excel files.
+This example demonstrates how Read Excel Sheet data to collection in Blue Prism using this `ExcelXmlAction`.
 
 To use these functionalities in Blue Prism, import the necessary DLLs into your VBO and implement each example usage in a code stage on a designated page.
 
@@ -255,6 +255,13 @@ To implement reading a sheet into a DataTable:
 1. **Create a page** named `ReadSheetToCollection` in the target Blue Prism Object.
 2. **Ensure the page** contains the imported DLLs mentioned as external references and the namespace imports.
 3. **In a code stage** on the `ReadSheetToCollection` page, implement the following:
+4. The code stage would have the following arguments:
+excelFullFilePath (Text, Input): The full file path to the Excel workbook.
+SheetName (Text, Input): The name of the sheet to read. If not provided, it retrieves the sheet name using sheetIndex.
+sheetIndex (Number, Input): The index of the sheet to read (0-based). Used if SheetName is not provided.
+Range (Text, Input): The range of cells to read (e.g., "A1"). If omitted, reads the entire sheet.
+hasHeader (Flag, Input): Flag indicating if the first row should be treated as header names in the DataTable.
+dt (Collection, Output): The DataTable containing the data read from the Excel sheet.
 
 ```vb
 Try
